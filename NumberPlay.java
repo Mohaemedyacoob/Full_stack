@@ -2,8 +2,7 @@ package NumberPlay;
 import java.util.Scanner;
 public class NumberPlay 
 {
-	   private int number;
-
+	private int number;
 	public void setNumber(int number) 
 	    {
 	        this.number = number;
@@ -30,3 +29,39 @@ public class NumberPlay
 	        }
 	    }
 	}
+
+public class Main 
+     {
+	    public static void main(String[] args)
+	    {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Enter a two-digit integer: ");
+	        int input = scanner.nextInt();
+	        scanner.close();
+
+	        if (input >= 10 && input <= 99)
+	        {
+	            NumberPlay kevinSolver = new NumberPlay();
+	            kevinSolver.setNumber(input);
+	            int difference = kevinSolver.getDifference();
+	            if (difference != -1) 
+	            {
+	                System.out.println("Difference between digits: " + difference);
+	          
+	            } 
+	        else 
+	          {
+	            System.out.println("Invalid number");
+	          }
+	        }
+	     }
+     }
+
+OUTPUT:
+Enter a two-digit integer: 23
+Difference between digits: 1
+
+Enter a two-digit integer: 34
+Difference between digits: 1
+
+
